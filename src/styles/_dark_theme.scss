@@ -1,0 +1,64 @@
+@use 'variable' as v;
+
+// ============================================================
+// Centralized dark theme overrides (global-level only)
+// Component styles use CSS custom properties from styles.scss.
+// ============================================================
+
+[data-theme="dark"] {
+  // --- Card ---
+  --mdc-elevated-card-container-color: #{v.$dark-bg-card};
+  --mdc-elevated-card-container-shadow-color: rgba(0, 0, 0, 0.4);
+
+  // --- Dialog ---
+  --mdc-dialog-container-color: #{v.$dark-bg-card};
+  --mdc-dialog-subhead-color: #{v.$dark-text-primary};
+  --mdc-dialog-supporting-text-color: #{v.$dark-text-secondary};
+
+  // --- Table ---
+  --mat-table-background-color: transparent;
+  --mat-table-header-headline-color: #{v.$dark-text-secondary};
+  --mat-table-row-item-label-text-color: #{v.$dark-text-primary};
+  --mat-table-row-item-outline-color: #{v.$dark-border};
+
+  // --- Sort header ---
+  --mat-sort-arrow-color: #{v.$dark-text-secondary};
+
+  // --- Paginator ---
+  --mat-paginator-container-background-color: transparent;
+  --mat-paginator-container-text-color: #{v.$dark-text-secondary};
+  --mat-paginator-enabled-icon-color: #{v.$dark-text-secondary};
+  --mat-paginator-disabled-icon-color: #{v.$dark-border};
+
+  // --- Select / Option (paginator dropdown) ---
+  --mat-select-panel-background-color: #{v.$dark-bg-deep};
+  --mat-select-enabled-trigger-text-color: #{v.$dark-text-primary};
+  --mat-select-enabled-arrow-color: #{v.$dark-text-secondary};
+  --mat-option-label-text-color: #{v.$dark-text-primary};
+  --mat-option-hover-state-layer-color: rgba(255, 255, 255, 0.08);
+  --mat-option-selected-state-layer-color: rgba(96, 165, 250, 0.15);
+
+  // --- Slide toggle ---
+  --mdc-switch-unselected-track-color: #{v.$dark-border};
+  --mdc-switch-unselected-hover-track-color: #{v.$gray-600};
+  --mdc-switch-unselected-focus-track-color: #{v.$dark-border};
+  --mdc-switch-unselected-pressed-track-color: #{v.$gray-600};
+  --mdc-switch-unselected-handle-color: #{v.$dark-text-secondary};
+  --mdc-switch-unselected-hover-handle-color: #{v.$dark-text-tertiary};
+  --mdc-switch-unselected-focus-handle-color: #{v.$dark-text-secondary};
+  --mdc-switch-unselected-pressed-handle-color: #{v.$dark-text-tertiary};
+
+  // --- Buttons ---
+  --mdc-outlined-button-outline-color: #{v.$dark-border};
+  --mdc-outlined-button-label-text-color: #{v.$dark-text-primary};
+  --mdc-text-button-label-text-color: #{v.$dark-text-secondary};
+
+  // --- Form field / Input ---
+  --mdc-outlined-text-field-outline-color: #{v.$dark-border};
+  --mdc-outlined-text-field-label-text-color: #{v.$dark-text-secondary};
+  --mdc-outlined-text-field-input-text-color: #{v.$dark-text-primary};
+
+  // --- Tooltip ---
+  --mdc-plain-tooltip-container-color: #{v.$dark-bg-deep};
+  --mdc-plain-tooltip-supporting-text-color: #{v.$dark-text-primary};
+}

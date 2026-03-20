@@ -1,0 +1,16 @@
+@use 'variable' as v;
+
+mat-slide-toggle {
+  --mdc-switch-selected-track-color: #{v.$blue-500};
+  --mdc-switch-selected-hover-track-color: #{v.$blue-500};
+  --mdc-switch-selected-focus-track-color: #{v.$blue-500};
+  --mdc-switch-selected-pressed-track-color: #{v.$blue-500};
+  --mdc-switch-selected-handle-color: #{v.$white};
+  --mdc-switch-selected-hover-handle-color: #{v.$white};
+  --mdc-switch-selected-focus-handle-color: #{v.$white};
+  --mdc-switch-selected-pressed-handle-color: #{v.$white};
+
+  font-size: v.$font-base;
+  font-weight: 500;
+  color: var(--text-primary);
+}

@@ -1,0 +1,73 @@
+@use './styles/variable' as v;
+@use './styles/mat-card';
+@use './styles/mat-table';
+@use './styles/mat-modal';
+@use './styles/mat-toggle';
+@use './styles/chart';
+@use './styles/dark_theme';
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme Variables */
+:root {
+  --bg-primary: #{v.$gray-200};
+  --bg-secondary: #{v.$gray-100};
+  --bg-card: #{v.$white};
+  --bg-header: #{v.$gray-50};
+  --bg-input: #{v.$white};
+  --text-primary: #{v.$gray-900};
+  --text-secondary: #{v.$gray-500};
+  --text-hint: #{v.$gray-700};
+  --border-color: #{v.$gray-200};
+  --shadow-sm: #{v.$shadow-sm};
+  --shadow-md: #{v.$shadow-md};
+  --icon-badge-bg: #{v.$blue-100};
+  --accent-color: #{v.$blue-500};
+  --focus-ring: #{v.$focus-ring-blue};
+  --status-active-bg: #{v.$status-active-bg};
+  --status-active-text: #{v.$status-active-text};
+  --status-review-bg: #{v.$status-review-bg};
+  --status-review-text: #{v.$status-review-text};
+  --status-default-bg: #{v.$status-default-bg};
+  --status-default-text: #{v.$status-default-text};
+  --status-closed-bg: #{v.$status-closed-bg};
+  --status-closed-text: #{v.$status-closed-text};
+}
+
+[data-theme="dark"] {
+  --bg-primary: #{v.$dark-bg-body};
+  --bg-secondary: #{v.$dark-bg-header};
+  --bg-card: #{v.$dark-bg-card};
+  --bg-header: #{v.$dark-bg-header};
+  --bg-input: #{v.$dark-bg-deep};
+  --text-primary: #{v.$dark-text-primary};
+  --text-secondary: #{v.$dark-text-secondary};
+  --text-hint: #{v.$dark-text-tertiary};
+  --border-color: #{v.$dark-border};
+  --shadow-sm: #{v.$shadow-dark-sm};
+  --shadow-md: #{v.$shadow-dark-md};
+  --icon-badge-bg: #{v.$dark-icon-badge-bg};
+  --accent-color: #{v.$dark-accent};
+  --focus-ring: #{v.$dark-focus-ring};
+  --status-active-bg: #{v.$dark-status-active-bg};
+  --status-active-text: #{v.$dark-status-active-text};
+  --status-review-bg: #{v.$dark-status-review-bg};
+  --status-review-text: #{v.$dark-status-review-text};
+  --status-default-bg: #{v.$dark-status-default-bg};
+  --status-default-text: #{v.$dark-status-default-text};
+  --status-closed-bg: #{v.$dark-status-closed-bg};
+  --status-closed-text: #{v.$dark-status-closed-text};
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

@@ -1,0 +1,101 @@
+@use '../../../styles/variable' as v;
+
+.dashboard-container {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+
+  .dashboard-header {
+    background-color: var(--bg-header);
+    padding: v.$space-6 v.$space-8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.0625rem solid var(--border-color);
+
+    .header-title {
+      margin: 0;
+      font-size: v.$font-xl;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+  }
+
+  .dashboard-content {
+    max-width: v.$max-dashboard-width;
+    margin: 0 auto;
+    padding: v.$space-7 v.$space-8;
+
+    .summary-cards-section {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: v.$space-6;
+      margin-bottom: v.$space-7;
+
+      @media (max-width: 75rem) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 48rem) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .main-content-row {
+      display: grid;
+      grid-template-columns: 1fr 23.75rem;
+      gap: v.$space-7;
+
+      @media (max-width: 75rem) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .table-section,
+    .chart-section {
+      mat-card-content {
+        padding: v.$space-7;
+      }
+
+      .section-header {
+        font-size: v.$font-base;
+        font-weight: 700;
+        letter-spacing: 0.03125rem;
+        color: #{v.$gray-1000};
+        margin-bottom: v.$space-6;
+      }
+    }
+
+    .table-section {
+      .search-section {
+        margin-bottom: v.$space-6;
+
+        .search-input {
+          width: 100%;
+          padding: v.$space-3 v.$space-5;
+          border: 0.0625rem solid var(--border-color);
+          border-radius: v.$radius-md;
+          font-size: v.$font-base;
+          color: var(--text-primary);
+          background-color: var(--bg-input);
+          transition: all 0.2s;
+
+          &::placeholder {
+            color: var(--text-secondary);
+          }
+
+          &:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: var(--focus-ring);
+          }
+        }
+      }
+    }
+
+    .chart-section {
+      display: flex;
+      flex-direction: column;
+      height: max-content;
+    }
+  }
+}

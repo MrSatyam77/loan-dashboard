@@ -1,0 +1,6 @@
+<mat-slide-toggle
+  [checked]="isDarkMode"
+  (change)="onToggle()"
+  labelPosition="before">
+  <span [class.text-white]="isDarkMode" [class.text-black]="!isDarkMode">{{ isDarkMode ? 'Dark' : 'Light' }}</span>
+</mat-slide-toggle>

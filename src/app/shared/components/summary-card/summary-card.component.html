@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-content class="card-content">
+    <div class="icon-badge">
+      @if (icon) {
+        <mat-icon class="card-icon">{{ icon }}</mat-icon>
+      }
+    </div>
+    <div class="card-label">{{ label }}</div>
+    <div class="card-value">{{ value }}</div>
+    <div class="card-trend" [class.positive]="isPositiveTrend" [class.negative]="!isPositiveTrend">
+      <span class="trend-arrow">{{ isPositiveTrend ? '▲' : '▼' }}</span>
+      <span>{{ trend }}</span>
+    </div>
+  </mat-card-content>
+</mat-card>

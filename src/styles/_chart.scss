@@ -1,0 +1,68 @@
+@use 'variable' as v;
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .chart-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: v.$max-chart-width;
+    margin: 0 auto;
+
+    canvas {
+      position: relative;
+      z-index: 1;
+    }
+
+    .chart-center-text {
+      position: absolute;
+      top: 46%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      pointer-events: none;
+      z-index: 0;
+
+      .center-value {
+        font-size: v.$font-5xl;
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1;
+      }
+
+      .center-label {
+        font-size: v.$font-base;
+        color: var(--text-secondary);
+        margin-top: 0.375rem;
+      }
+    }
+  }
+
+  .chart-legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: v.$space-3 v.$space-5;
+    margin-top: v.$space-5;
+    padding: v.$space-0 v.$space-2;
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: v.$space-2;
+
+      .legend-dot {
+        width: v.$size-10;
+        height: v.$size-10;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      .legend-label {
+        font-size: v.$font-md;
+        color: var(--text-hint);
+      }
+    }
+  }
+}

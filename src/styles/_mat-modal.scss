@@ -1,0 +1,42 @@
+@use 'variable' as v;
+
+.cdk-overlay-pane .mat-mdc-dialog-surface {
+  --mdc-dialog-container-color: var(--bg-card);
+  --mdc-dialog-container-shape: #{v.$radius-lg};
+}
+
+.dialog-container {
+  .dialog-title {
+    font-size: v.$font-lg;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .dialog-content {
+    color: var(--text-secondary);
+    font-size: v.$font-md;
+    line-height: 1.5;
+    // max-width: v.$max-dialog-content-width;
+  }
+
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: v.$space-2;
+    padding: 0 24px 24px;
+
+    .cancel-button {
+      color: var(--text-secondary);
+      border-color: var(--border-color);
+    }
+
+    .confirm-button {
+      background-color: v.$red-600;
+      color: v.$white;
+
+      &:hover {
+        background-color: v.$red-700;
+      }
+    }
+  }
+}
