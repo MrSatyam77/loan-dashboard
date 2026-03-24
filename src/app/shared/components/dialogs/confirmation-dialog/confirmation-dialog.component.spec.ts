@@ -7,9 +7,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 describe('ConfirmationDialogComponent', () => {
   let component: ConfirmationDialogComponent;
   let fixture: ComponentFixture<ConfirmationDialogComponent>;
-  let dialogRef: jasmine.SpyObj<MatDialogRef<ConfirmationDialogComponent>>;
+  let dialogRef: { close: jest.Mock };
   beforeEach(async () => {
-    const dialogRefSpy = jasmine.createSpyObj('MatDialogRef', ['close']);
+    const dialogRefSpy = { close: jest.fn() };
     await TestBed.configureTestingModule({
       imports: [ConfirmationDialogComponent, NoopAnimationsModule],
       providers: [
@@ -26,7 +26,7 @@ describe('ConfirmationDialogComponent', () => {
         }
       ]
     }).compileComponents();
-    dialogRef = TestBed.inject(MatDialogRef) as jasmine.SpyObj<MatDialogRef<ConfirmationDialogComponent>>;
+    dialogRef = TestBed.inject(MatDialogRef) as unknown as { close: jest.Mock };
     fixture = TestBed.createComponent(ConfirmationDialogComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();

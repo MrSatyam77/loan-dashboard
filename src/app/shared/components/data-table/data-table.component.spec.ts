@@ -35,7 +35,7 @@ describe('DataTableComponent', () => {
   });
 
   it('should emit delete event when delete button clicked', () => {
-    spyOn(component.deleteLoan, 'emit');
+    jest.spyOn(component.deleteLoan, 'emit');
     const loan = {
       id: 'LN-0001',
       borrowerName: 'Test',
