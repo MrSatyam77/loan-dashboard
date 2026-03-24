@@ -1,0 +1,17 @@
+@use '../../../../../styles/variable' as v;
+
+.dashboard-header {
+  background-color: var(--bg-header);
+  padding: v.$space-6 v.$space-8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.0625rem solid var(--border-color);
+
+  .header-title {
+    margin: 0;
+    font-size: v.$font-xl;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+}
