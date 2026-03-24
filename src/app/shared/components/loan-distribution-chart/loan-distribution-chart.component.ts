@@ -2,7 +2,7 @@ import { Component, Input, ViewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration } from 'chart.js';
 import { LoanDistribution } from '../../interfaces/loan.interface';
-import { LOAN_TYPE_COLORS, DEFAULT_LEGEND_ITEMS, DEFAULT_CHART_LABELS } from '../../constants/loan-data.constants';
+import { LOAN_TYPE_COLORS, DEFAULT_LEGEND_ITEMS, DEFAULT_CHART_LABELS } from '../../constants/loan-data.constant';
 
 @Component({
   selector: 'app-loan-distribution-chart',

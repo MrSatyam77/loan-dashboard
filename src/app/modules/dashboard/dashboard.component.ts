@@ -11,6 +11,7 @@ import { DataTableComponent } from '../../shared/components/data-table/data-tabl
 import { LoanDistributionChartComponent } from '../../shared/components/loan-distribution-chart/loan-distribution-chart.component';
 import { LoanDataService } from '../../shared/services/loan-data.service';
 import { ConfirmationDialogComponent } from '../../shared/components/dialogs/confirmation-dialog/confirmation-dialog.component';
+import { LOAN_COLUMNS } from '../../shared/constants/loan-data.constant';
 import { Header } from '../../shared/components/layout/header/header';
 
 @Component({
@@ -38,6 +39,7 @@ export class DashboardComponent {
   filteredLoans = this.loanDataService.filteredLoans;
   loanDistribution = this.loanDataService.loanDistribution;
   searchTerm = '';
+  loanColumns = LOAN_COLUMNS;
 
   constructor() {
     this.searchTerm$

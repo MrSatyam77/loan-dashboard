@@ -34,3 +34,10 @@ export interface LegendItem {
   label: string;
   color: string;
 }
+
+export interface TableColumn {
+  key: string;
+  header: string;
+  sortable?: boolean;
+  type?: 'text' | 'currency' | 'percentage' | 'status' | 'date';
+}

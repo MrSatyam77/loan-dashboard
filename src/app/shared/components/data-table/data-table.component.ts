@@ -1,9 +1,9 @@
-import { Component, Input, Output, EventEmitter, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatSortModule, MatSort } from '@angular/material/sort';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
-import { Loan } from '../../interfaces/loan.interface';
+import { Loan, TableColumn } from '../../interfaces/loan.interface';
 
 @Component({
   selector: 'app-data-table',
@@ -17,15 +17,23 @@ import { Loan } from '../../interfaces/loan.interface';
   templateUrl: './data-table.component.html',
   styleUrl: './data-table.component.scss'
 })
-export class DataTableComponent implements AfterViewInit {
-  @Input() set loans(value: Loan[]) {
-    this.dataSource.data = value;
-  }
+export class DataTableComponent implements AfterViewInit, OnChanges {
+  @Input() data: any[] = [];
+  @Input() columns: TableColumn[] = [];
   @Output() deleteLoan = new EventEmitter<string>();
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  displayedColumns: string[] = ['id', 'borrowerName', 'amount', 'rate', 'status', 'date', 'actions'];
-  dataSource = new MatTableDataSource<Loan>([]);
+  displayedColumns: string[] = [];
+  dataSource = new MatTableDataSource<any>([]);
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['data']) {
+      this.dataSource.data = this.data;
+    }
+    if (changes['columns']) {
+      this.displayedColumns = [...this.columns.map(c => c.key), 'actions'];
+    }
+  }
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -36,15 +44,18 @@ export class DataTableComponent implements AfterViewInit {
     return `status-${status.toLowerCase()}`;
   }
 
-  formatCurrency(amount: number): string {
-    return `$${amount.toLocaleString()}`;
+  formatCell(value: any, type?: string): string {
+    switch (type) {
+      case 'currency':
+        return `$${Number(value).toLocaleString()}`;
+      case 'percentage':
+        return `${Number(value).toFixed(1)}%`;
+      default:
+        return value;
+    }
   }
 
-  formatRate(rate: number): string {
-    return `${rate.toFixed(1)}%`;
-  }
-
-  onDeleteClick(loan: Loan): void {
-    this.deleteLoan.emit(loan.id);
+  onDeleteClick(row: Loan): void {
+    this.deleteLoan.emit(row.id);
   }
 }
