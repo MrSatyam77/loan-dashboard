@@ -1,6 +1,6 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { Loan, LoanDistribution, SummaryCard } from '../interfaces/loan.interface';
-import { MOCK_LOANS } from '../constants/loan-data.constants';
+import { MOCK_LOANS } from '../constants/loan-data.constant';
 
 @Injectable({
   providedIn: 'root'

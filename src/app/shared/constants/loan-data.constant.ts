@@ -1,4 +1,13 @@
-import { Loan } from '../interfaces/loan.interface';
+import { Loan, TableColumn } from '../interfaces/loan.interface';
+
+export const LOAN_COLUMNS: TableColumn[] = [
+  { key: 'id', header: 'Loan ID', sortable: true },
+  { key: 'borrowerName', header: 'Borrower', sortable: true },
+  { key: 'amount', header: 'Amount', sortable: true, type: 'currency' },
+  { key: 'rate', header: 'Rate', sortable: true, type: 'percentage' },
+  { key: 'status', header: 'Status', sortable: true, type: 'status' },
+  { key: 'date', header: 'Date', sortable: true, type: 'date' }
+];
 
 export const MOCK_LOANS: Loan[] = [
   { id: 'LN-0001', borrowerName: 'James Carter', amount: 312000, rate: 5.2, status: 'Active', date: '2024-01-15', type: 'Residential' },
@@ -26,7 +35,6 @@ export const MOCK_LOANS: Loan[] = [
   { id: 'LN-0023', borrowerName: 'Jason Lee', amount: 445000, rate: 6.1, status: 'Review', date: '2024-05-05', type: 'Commercial' },
   { id: 'LN-0024', borrowerName: 'Lauren Walker', amount: 295000, rate: 5.5, status: 'Active', date: '2024-05-10', type: 'Residential' },
   { id: 'LN-0025', borrowerName: 'Kevin Hall', amount: 365000, rate: 5.9, status: 'Active', date: '2024-05-15', type: 'Commercial' },
-  { id: 'LN-0026', borrowerName: 'Emily Allen', amount: 185000, rate: 4.9, status: 'Closed', date: '2024-05-20', type: 'Residential' },
 ];
 
 export const STATUS_COLORS: Record<string, string> = {

@@ -31,7 +31,8 @@
             </mat-form-field>
           </div>
           <app-data-table
-            [loans]="filteredLoans()"
+            [data]="filteredLoans()"
+            [columns]="loanColumns"
             (deleteLoan)="onDeleteLoan($event)">
           </app-data-table>
         </mat-card-content>
