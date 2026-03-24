@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatDialog } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
 import { SummaryCardComponent } from '../../shared/components/summary-card/summary-card.component';
 import { DataTableComponent } from '../../shared/components/data-table/data-table.component';
@@ -17,6 +19,8 @@ import { Header } from '../../shared/components/layout/header/header';
   imports: [
     FormsModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
     SummaryCardComponent,
     Header,
     DataTableComponent,

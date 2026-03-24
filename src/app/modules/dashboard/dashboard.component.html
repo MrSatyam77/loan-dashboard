@@ -21,12 +21,14 @@
         <mat-card-content>
           <div class="section-header">LOAN RECORDS</div>
           <div class="search-section">
-            <input 
-              type="text"
-              class="search-input"
-              [(ngModel)]="searchTerm"
-              (ngModelChange)="onSearchChange($event)"
-              placeholder="Search by name, ID...">
+            <mat-form-field appearance="outline" class="search-input">
+              <input 
+                matInput
+                type="text"
+                [(ngModel)]="searchTerm"
+                (ngModelChange)="onSearchChange($event)"
+                placeholder="Search by name, ID...">
+            </mat-form-field>
           </div>
           <app-data-table
             [loans]="filteredLoans()"

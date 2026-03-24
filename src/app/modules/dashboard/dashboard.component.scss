@@ -51,17 +51,9 @@
 
     .table-section {
       .search-section {
-        margin-bottom: v.$space-6;
 
         .search-input {
           width: 100%;
-          padding: v.$space-3 v.$space-5;
-          border: 0.0625rem solid var(--border-color);
-          border-radius: v.$radius-md;
-          font-size: v.$font-base;
-          color: var(--text-primary);
-          background-color: var(--bg-input);
-          transition: all 0.2s;
 
           &::placeholder {
             color: var(--text-secondary);
