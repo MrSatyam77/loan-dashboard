@@ -4,10 +4,8 @@
     <h1 class="header-title">Loan Portfolio Dashboard</h1>
     <app-theme-toggle></app-theme-toggle>
   </div>
-
   <!-- Main Content -->
   <div class="dashboard-content">
-    
     <!-- Summary Cards -->
     <div class="summary-cards-section">
       @for (card of summaryCards(); track card.label) {
@@ -19,10 +17,8 @@
         </app-summary-card>
       }
     </div>
-
     <!-- Main Content Area: Table + Chart -->
     <div class="main-content-row">
-      
       <!-- Left: Loan Records Table -->
       <mat-card class="table-section">
         <mat-card-content>
@@ -41,7 +37,6 @@
           </app-data-table>
         </mat-card-content>
       </mat-card>
-
       <!-- Right: Loan Distribution Chart -->
       <mat-card class="chart-section">
         <mat-card-content>
@@ -52,6 +47,5 @@
         </mat-card-content>
       </mat-card>
     </div>
-
   </div>
 </div>
