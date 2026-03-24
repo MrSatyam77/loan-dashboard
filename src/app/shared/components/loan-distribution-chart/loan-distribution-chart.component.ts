@@ -49,7 +49,7 @@ export class LoanDistributionChartComponent {
   };
 
   private updateChartData(distribution: LoanDistribution[]): void {
-    if (distribution && distribution.length > 0) {
+    if (distribution?.length) {
       const labels = distribution.map(d => `${d.type} ${Math.round(d.percentage)}%`);
       const data = distribution.map(d => d.percentage);
       this.doughnutChartData = {

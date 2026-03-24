@@ -7,9 +7,9 @@ import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
 import { SummaryCardComponent } from '../../shared/components/summary-card/summary-card.component';
 import { DataTableComponent } from '../../shared/components/data-table/data-table.component';
 import { LoanDistributionChartComponent } from '../../shared/components/loan-distribution-chart/loan-distribution-chart.component';
-import { ThemeToggleComponent } from '../../shared/components/theme-toggle/theme-toggle.component';
 import { LoanDataService } from '../../shared/services/loan-data.service';
 import { ConfirmationDialogComponent } from '../../shared/components/dialogs/confirmation-dialog/confirmation-dialog.component';
+import { Header } from '../../shared/components/layout/header/header';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,9 +18,9 @@ import { ConfirmationDialogComponent } from '../../shared/components/dialogs/con
     FormsModule,
     MatCardModule,
     SummaryCardComponent,
+    Header,
     DataTableComponent,
-    LoanDistributionChartComponent,
-    ThemeToggleComponent
+    LoanDistributionChartComponent
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
