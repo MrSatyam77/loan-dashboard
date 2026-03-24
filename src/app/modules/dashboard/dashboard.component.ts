@@ -8,8 +8,8 @@ import { SummaryCardComponent } from '../../shared/components/summary-card/summa
 import { DataTableComponent } from '../../shared/components/data-table/data-table.component';
 import { LoanDistributionChartComponent } from '../../shared/components/loan-distribution-chart/loan-distribution-chart.component';
 import { ThemeToggleComponent } from '../../shared/components/theme-toggle/theme-toggle.component';
-import { ConfirmationDialogComponent } from '../../shared/components/confirmation-dialog/confirmation-dialog.component';
 import { LoanDataService } from '../../shared/services/loan-data.service';
+import { ConfirmationDialogComponent } from '../../shared/components/dialogs/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -56,7 +56,7 @@ export class DashboardComponent {
     const loan = this.loanDataService.loans().find(l => l.id === loanId);
     if (!loan) return;
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      width: '370px',
+      width: '23.125rem',
       maxWidth: '90vw',
       data: {
         title: 'Delete loan record?',
